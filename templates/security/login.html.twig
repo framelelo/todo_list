@@ -24,11 +24,14 @@
 
         <input type="hidden" name="_csrf_token"
             value="{{ csrf_token('authenticate') }}"
-        >
-        <div class="text-center my_4">
+        ><br>
+        <div class="text-center">
             <button class="btn btn-lg btn-primary" type="submit">
             VALIDER
-            </button>
+            </button> 
+            <p>
+                <a class='text-primary' href="{{ path('app_register') }}">Pas de compte ?</a>
+            </p>
         </div>
     </form>
 </div>
