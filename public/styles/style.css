@@ -78,6 +78,7 @@ span,.edit-btn {
 input:hover, input:active,input:focus, textarea:hover, textarea:active, textarea:active {
     outline: 1px solid var(--secondary_color);
 }
+/** CUSTOMIZED BUTTONS **/
 
 .btn {
     border-radius: 10px;
