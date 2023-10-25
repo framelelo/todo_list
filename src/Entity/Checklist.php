@@ -77,15 +77,23 @@ class Checklist
     #[ORM\Column(nullable: true)]
     private ?string $image = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $updatedAt = null;
+
 
     public function setImageFile(?File $imageFile = null): void
     {
-        $this->imageFile = $imageFile;
+        $this->imageFile = $imageFile; 
+        if (null !== $imageFile) {
+            
+            $this->updatedAt = new \DateTimeImmutable();
+        }
     }
 
     public function getImageFile(): ?File
     {
         return $this->imageFile;
+       
     }
     public function setImage(?string $image): void
     {
@@ -118,7 +126,6 @@ class Checklist
     public function removeProduct(Products $product): static
     {
         if ($this->products->removeElement($product)) {
-            // set the owning side to null (unless already changed)
             if ($product->getChecklist() === $this) {
                 $product->setChecklist(null);
             }
