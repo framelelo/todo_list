@@ -22,11 +22,13 @@ class ChecklistController extends AbstractController
 {
     #[Route('/', name: 'app_checklist_index', methods: ['GET'])]
     public function index(ChecklistRepository $checklistRepository): Response
-    {
-        
-        return $this->render('checklist/index.html.twig', [
-            'checklists' => $checklistRepository->findAll(),
-        ]);
+    {$user = $this->getUser();
+        if ($user) {
+            $checklists = $checklistRepository->findBy(['user' => $user]);
+            return $this->render('checklist/index.html.twig', [
+                'checklists' => $checklists
+            ]);
+        }
     }
 
     #[Route('/new', name: 'app_checklist_new', methods: ['GET', 'POST'])]

@@ -75,6 +75,10 @@ span,.edit-btn {
         color: var(--secondary_color);
     }
 }
+input:hover, input:active,input:focus, textarea:hover, textarea:active, textarea:active {
+    outline: 1px solid var(--secondary_color);
+}
+
 .btn {
     border-radius: 10px;
     margin: 4px;
@@ -169,7 +173,7 @@ label {
     color: var(--secondary_color);
 }
 
-.container input, optgroup, select, textarea{
+.container input:not([type="checkbox"]), optgroup, select, textarea{
         width: 100%;
         border: var(--primary_color) 1px solid;
         height: 55px;
@@ -178,7 +182,13 @@ label {
         background-color: var(--light_color);
 
 }
+input[type='checkbox']{
+    margin: 5px;
+}
 
+input:checked {
+    background-color: #000;
+  }
 .listings {
     margin: 5px;
     border-top: 1px solid rgba(199,199,199,.4);
