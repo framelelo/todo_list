@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Checklist{% endblock %}
+
+{% block body %}
+
+<div class="container my-5">
+
+    <div class="top_container mb-3">
+        <h1> {{ checklist.name }}</h1>
+
+        <a class='return-btn my-3' href="{{ path('app_checklist_index') }}"> <i class="fas fa-backward"></i> Retour</a>
+
+    </div>
+    {{ include('products/_form.html.twig') }}
+    <div class='mylist mb-5'>
+        {% for product in checklist.products %}
+            <div class='listings'>
+                <p class='name'>{{ product.name }}</p>
+                    
+                <div class='description'>{{ product.description }}</div>
+                
+                    <a class='edit-btn' href="{{ path('app_products_edit', {'id': product.id}) }}">
+                        <i class="fas fa-pen"></i>
+                    </a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class='text-center'> 
+        <a  class='btn' href="{{ path('app_checklist_edit', {'id': checklist.id}) }}">MODIFIER</a>
+    </div>
+</div>
+{% endblock %}

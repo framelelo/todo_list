@@ -1,0 +1,27 @@
+{% block body %}
+<div class='container-fluid bg-light' id='navbar'>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('app_home') }}">
+            <i class="fas fa-home"></i>
+          </a>
+        </li>
+        {% if app.user %}
+          <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_logout') }}">
+                <i class="fas fa-sign-out-alt fa-lg"></i>
+              </a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_login') }}">Se connecter</a>
+          </li>
+        {% endif %}
+        
+      </ul>
+    </div>
+  </nav>
+</div>
+{% endblock %}

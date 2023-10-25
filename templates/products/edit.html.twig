@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Products{% endblock %}
+
+{% block body %}
+    <div class="container my-5">
+        <div class="top_container mb-3">
+            <h1> {{ product.name }}</h1>
+            <a class='return-btn my-3' href="{{ path('app_checklist_index') }}"> <i class="fas fa-backward"></i> Retour</a>
+
+        </div>
+
+        {{ include('products/_form.html.twig', {'button_label': 'VALIDER'}) }}
+
+        {{ include('products/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

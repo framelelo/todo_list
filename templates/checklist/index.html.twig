@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Checklist index{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <h1>Checklist</h1>
+
+      <div class="row">
+        {% for checklist in checklists %}
+             <div class="col-md-6 my-3 checklists">
+            <div class="card">
+                <div class='img-box'> 
+                <img src=" {{ asset('images/checklists/'~checklist.image) }}" class="card-img-top" alt="{{ checklist.name }}">
+                </div>
+                
+                <div class="card-body">
+                    <h5 class="card-title">{{ checklist.name }}</h5>
+                      <a href="{{ path('app_checklist_show', {'id': checklist.id}) }}" class="btn btn-primary">VOIR</a>
+               
+                </div>
+            </div>
+        </div>
+        {% else %}
+                <p class='text-center'>Pas encore de liste !</p>
+        
+        {% endfor %}
+      </div>
+        
+    <div class='text-center'>
+        <a href="{{ path('app_checklist_new') }}" class="btn btn-primary">Créer une nouvelle liste</a>
+    </div>
+</div>
+{% endblock %}
