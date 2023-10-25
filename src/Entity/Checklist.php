@@ -29,7 +29,7 @@ class Checklist
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
-    #[ORM\OneToMany(mappedBy: 'checklist', targetEntity: Products::class)]
+    #[ORM\OneToMany(mappedBy: 'checklist', targetEntity: Products::class, orphanRemoval:true)]
     private Collection $products;
 
     public function __construct()
