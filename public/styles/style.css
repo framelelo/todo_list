@@ -45,10 +45,14 @@ span,.edit-btn {
     padding: 0 15px;
     display: flex;
     width: 100%;
+    align-items: center;
     justify-content: space-between;
 
     .nav-item > .nav-link {
         color: var(--secondary_color);
+        > i {
+            font-size: 30px;
+        }
         &:hover {
             color: var(--dark_color);
         }
