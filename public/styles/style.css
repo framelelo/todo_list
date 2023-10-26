@@ -89,7 +89,7 @@ span,.edit-btn {
 /** CUSTOMIZED BUTTONS **/
 
 input:hover, input:active,input:focus, 
-textarea:hover, textarea:active, textarea:active {
+textarea:hover, textarea:active, textarea:focus-visible {
     outline: 1px solid var(--secondary_color);
 }
 /** CUSTOMIZED BUTTONS **/
