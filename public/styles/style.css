@@ -43,14 +43,33 @@ span,.edit-btn {
 
 #navbar .navbar-nav{
     padding: 0 15px;
-    flex-direction: row;
     display: flex;
+    width: 100%;
     justify-content: space-between;
 
     .nav-item > .nav-link {
         color: var(--secondary_color);
         &:hover {
             color: var(--dark_color);
+        }
+    }
+    .logo a {
+        color: var(--secondary_color);
+        font-family: var(--basic_font);
+        font-size: 35px;
+        display: block;
+        text-decoration: none;
+        font-style: italic;
+        transition: all .5s ease-in-out .5;
+        > i {
+            padding: 0 0 0 5px;
+            transition: all .5s linear;
+        }
+        &:hover {
+            > i {font-size: 30px;
+                color: var(--dark_color);
+             
+            }
         }
     }
 }
@@ -214,3 +233,10 @@ input:checked {
         margin: 25px 0;
     }
 }
+/*MEDIA QUERIES*/
+
+@media (max-width: 780px) {
+    .container .card .card-body {
+        text-align: center;
+    }
+  }
