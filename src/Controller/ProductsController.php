@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Products;
 use App\Form\ProductsType;
-use App\Repository\ProductsRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,14 +16,14 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class ProductsController extends AbstractController
 {
     #[Route('/', name: 'app_products_index', methods: ['GET'])]
-    public function index(ProductsRepository $productsRepository): Response
+    public function index(): Response
     {
         return $this->redirectToRoute('app_home');
     }
 
     
     #[Route('/{id}', name: 'app_products_show', methods: ['GET'])]
-    public function show(Products $product): Response
+    public function show(): Response
     {
         return $this->redirectToRoute('app_checklist_index');
     }
