@@ -45,6 +45,7 @@ span,.edit-btn {
     padding: 0 15px;
     display: flex;
     width: 100%;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
@@ -81,24 +82,14 @@ span,.edit-btn {
     color: var(--secondary_color) !important;
     text-decoration: none;
     &:hover {
-        color: var(--dark_color) !important;
+        color: var(--light_color) !important;
     }
 }
 
 /** CUSTOMIZED BUTTONS **/
-.btn-delete {
-    border-radius: 10px;
-    margin: 4px;
-    border: 0;
-    background-color: transparent;
-    color: var(--dark_color);
-    text-align: center;
-    font-size: 15px;
-    &:hover {
-        color: var(--secondary_color);
-    }
-}
-input:hover, input:active,input:focus, textarea:hover, textarea:active, textarea:active {
+
+input:hover, input:active,input:focus, 
+textarea:hover, textarea:active, textarea:active {
     outline: 1px solid var(--secondary_color);
 }
 /** CUSTOMIZED BUTTONS **/
@@ -120,6 +111,8 @@ input:hover, input:active,input:focus, textarea:hover, textarea:active, textarea
         background: var(--secondary_color);
     }
     &:hover, &:active, &:focus {
+        outline: none;
+        border-color: var(--secondary_color) ;
         color: var(--secondary_color) !important;
         background: var(--dark_color) !important;
     }
@@ -235,6 +228,17 @@ input:checked {
     > a > img {
         max-width: 100%;
         margin: 25px 0;
+    }
+}
+
+.resgitration-page, .login-page {
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    background-color: var(--bg_color);
+    padding: 20px;
+    form > h1 {
+        text-align: center;
     }
 }
 /*MEDIA QUERIES*/
